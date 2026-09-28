@@ -1,0 +1,8 @@
+.right{
+    background-image: url(/public/Jupiter_isolated_on_black_backgr…_2K_20260922153025.jpeg);
+}
+.container{
+    border: solid red;
+    display: flex;
+    height: 100vh;
+}
