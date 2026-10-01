@@ -1,0 +1,23 @@
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin-bottom: 8px;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.tab {
+  color: #c4c8cf;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--color-text-muted);
+  }
+}
+
+.tab.active {
+  color: var(--color-text);
+}

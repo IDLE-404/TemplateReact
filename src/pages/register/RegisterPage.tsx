@@ -1,50 +1,43 @@
-import React from "react";
-import { FcGoogle } from "react-icons/fc";
-import styles from "./RegisterPage.module.css";
+import { useState, type FormEvent } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import AuthTabs from '@/components/AuthTabs'
+import Field from '@/components/Field'
+import SocialLogin from '@/components/SocialLogin'
+import SubmitButton from '@/components/SubmitButton'
+import { useAuth } from '@/shared/auth/AuthContext'
+import { useI18n } from '@/shared/i18n/I18nContext'
+import styles from './RegisterPage.module.css'
+
 const RegisterPage = () => {
+  const { register } = useAuth()
+  const { t } = useI18n()
+  const navigate = useNavigate()
+  const [error, setError] = useState(false)
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const data = new FormData(event.currentTarget)
+    if (register(String(data.get('name')), String(data.get('email')), String(data.get('password')))) navigate('/')
+    else setError(true)
+  }
+
   return (
-    <div className={styles.container}>
-      <div className={styles.box}>
-        <div className={styles.right}>
-          <span>wefewfewfwfwf</span>
-        </div>
-        {/* LEFT */}
-        <div className={styles.left}>
-          <div className={styles.containerForm}>
-            <p>121212121</p>
-            <span>23113132</span>
-            <form action="">
-              <div className={styles.inputBox}>
-                <input className={styles.input} type="text" name="" />
-                <label className={styles.lable}>NAME</label>
-              </div>
-              <div className={styles.inputBox}>
-                <input className={styles.input} type="text" name="" />
-                <label className={styles.lable}>password</label>
-              </div>
-              <div className={styles.inputBox}>
-                <input className={styles.input} type="text" name="" />
-                <label className={styles.lable}>email</label>
-              </div>
+    <>
+      <AuthTabs />
+      <p className={styles.subtitle}>{t.auth.registerSubtitle}</p>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <Field label={t.auth.name} type="text" name="name" placeholder={t.auth.namePlaceholder} required />
+        <Field label={t.auth.email} type="email" name="email" placeholder="you@example.com" required />
+        <Field label={t.auth.password} type="password" name="password" placeholder="••••••••" required />
+        {error && <p className={styles.error}>{t.auth.registerError}</p>}
+        <SubmitButton>{t.auth.createAccount}</SubmitButton>
+        <SocialLogin />
+      </form>
+      <p className={styles.footer}>
+        {t.auth.haveAccount} <Link to="/auth/login">{t.auth.signIn}</Link>
+      </p>
+    </>
+  )
+}
 
-              <button className={styles.btnGoogle}>
-                {" "}
-                <FcGoogle /> Google
-              </button>
-            </form>
-            <div className={styles.des}>
-              <span className={styles.desText}>
-                ferferfe{" "}
-                <a href="/login" className={styles.linkLogin}>
-                  login
-                </a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default RegisterPage;
+export default RegisterPage

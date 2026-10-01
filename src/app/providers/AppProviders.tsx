@@ -1,6 +1,14 @@
 import { RouterProvider } from 'react-router-dom'
 import { router } from '@/app/router'
+import { AuthProvider } from './AuthProvider'
+import { I18nProvider } from './I18nProvider'
 
 export const AppProviders = () => {
-  return <RouterProvider router={router} />
+  return (
+    <I18nProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </I18nProvider>
+  )
 }

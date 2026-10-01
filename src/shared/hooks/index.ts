@@ -1,1 +1,1 @@
-export {}
+export { useReveal } from './useReveal'

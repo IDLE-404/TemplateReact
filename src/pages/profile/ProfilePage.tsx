@@ -1,10 +1,15 @@
+import PageHead from '@/components/PageHead'
+import { useI18n } from '@/shared/i18n/I18nContext'
+import ProfileCard from './components/ProfileCard'
 import styles from './ProfilePage.module.css'
 
 const ProfilePage = () => {
+  const { t } = useI18n()
+
   return (
-    <section className={styles.section}>
-      <h1>Profile</h1>
-      <p>Your profile will appear here.</p>
+    <section className={styles.page}>
+      <PageHead title={t.profile.title} />
+      <ProfileCard />
     </section>
   )
 }

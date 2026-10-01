@@ -1,24 +1,26 @@
-import { useState } from 'react'
-import Button from '@/components/Button/Button'
-import Modal from '@/components/Modal/Modal'
+import { useReveal } from '@/shared/hooks'
+import About from './components/About'
+import Band from './components/Band'
+import Cta from './components/Cta'
+import Hero from './components/Hero'
+import Platform from './components/Platform'
+import Steps from './components/Steps'
+import UseCases from './components/UseCases'
 import styles from './HomePage.module.css'
 
 const HomePage = () => {
-  const [modalOpen, setModalOpen] = useState(false)
+  useReveal()
 
   return (
-    <section className={styles.section}>
-      <h1>Home</h1>
-      <p>Welcome to CodeTou</p>
-      <Button onClick={() => setModalOpen(true)}>Open modal</Button>
-      <Modal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        title="Hello"
-      >
-        <p>This is a demo modal.</p>
-      </Modal>
-    </section>
+    <div className={styles.home}>
+      <Hero />
+      <About />
+      <Platform />
+      <Steps />
+      <Band />
+      <UseCases />
+      <Cta />
+    </div>
   )
 }
 

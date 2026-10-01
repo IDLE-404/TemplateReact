@@ -1,9 +1,17 @@
 @import './variables.css';
 
 * {
-  
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 80px;
 }
 
 html,
@@ -27,4 +35,72 @@ a {
 button {
   font: inherit;
   cursor: pointer;
+}
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s var(--ease),
+    transform 0.9s var(--ease);
+  transition-delay: var(--delay, 0s);
+}
+
+[data-reveal='scale'] {
+  transform: scale(0.94);
+}
+
+[data-reveal='left'] {
+  transform: translateX(-40px);
+}
+
+[data-reveal='right'] {
+  transform: translateX(40px);
+}
+
+[data-reveal].visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-stagger] > :nth-child(2) {
+  --delay: 0.1s;
+}
+
+[data-stagger] > :nth-child(3) {
+  --delay: 0.2s;
+}
+
+[data-stagger] > :nth-child(4) {
+  --delay: 0.3s;
+}
+
+[data-stagger] > :nth-child(5) {
+  --delay: 0.4s;
 }

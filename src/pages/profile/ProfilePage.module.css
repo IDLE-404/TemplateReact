@@ -1,13 +1,8 @@
-.section {
+.page {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-
-  h1 {
-    font-size: 32px;
-  }
-
-  p {
-    color: var(--color-text-muted);
-  }
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 120px 16px 40px;
 }

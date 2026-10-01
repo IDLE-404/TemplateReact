@@ -1,10 +1,12 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout/MainLayout";
+import AuthLayout from "@/layouts/authLayout";
+import RequireRole from "@/components/RequireRole";
 import HomePage from "@/pages/home/HomePage";
 import LoginPage from "@/pages/login/LoginPage";
 import ProfilePage from "@/pages/profile/ProfilePage";
 import RegisterPage from "@/pages/register/RegisterPage";
-import AuthLayout from "@/layouts/authLayout";
+import AdminPage from "@/pages/admin/AdminPage";
 
 export const router = createBrowserRouter([
   {
@@ -12,13 +14,21 @@ export const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "profile", element: <ProfilePage /> },
+      {
+        element: <RequireRole />,
+        children: [{ path: "profile", element: <ProfilePage /> }],
+      },
+      {
+        element: <RequireRole roles={["admin"]} />,
+        children: [{ path: "admin", element: <AdminPage /> }],
+      },
     ],
   },
   {
     path: "/auth",
     element: <AuthLayout />,
     children: [
+      { index: true, element: <Navigate to="login" replace /> },
       { path: "login", element: <LoginPage /> },
       { path: "register", element: <RegisterPage /> },
     ],
