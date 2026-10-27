@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FiArrowUpRight, FiLogOut } from 'react-icons/fi'
-import LangSwitch from '@/components/LangSwitch'
+import LangSwitch from '@/components/LangSwitch/LangSwitch'
 import { useAuth } from '@/shared/auth/AuthContext'
 import { useI18n } from '@/shared/i18n/I18nContext'
 import styles from './Header.module.css'

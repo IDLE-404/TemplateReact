@@ -1,7 +1,7 @@
-import PageHead from '@/components/PageHead'
+import PageHead from '@/components/PageHead/PageHead'
 import { useI18n } from '@/shared/i18n/I18nContext'
-import RolesCard from './components/RolesCard'
-import UsersTable from './components/UsersTable'
+import RolesCard from './components/RolesCard/RolesCard'
+import UsersTable from './components/UsersTable/UsersTable'
 import styles from './AdminPage.module.css'
 
 const AdminPage = () => {

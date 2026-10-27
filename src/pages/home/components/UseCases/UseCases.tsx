@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import Arrows from '@/components/Arrows'
-import Badge from '@/components/Badge'
-import Placeholder from '@/components/Placeholder'
-import Title from '@/components/Title'
+import Arrows from '@/components/Arrows/Arrows'
+import Badge from '@/components/Badge/Badge'
+import Placeholder from '@/components/Placeholder/Placeholder'
+import Title from '@/components/Title/Title'
 import { useI18n } from '@/shared/i18n/I18nContext'
 import styles from './UseCases.module.css'
 

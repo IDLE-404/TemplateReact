@@ -1,5 +1,5 @@
-import MoreLink from '@/components/MoreLink'
-import Placeholder from '@/components/Placeholder'
+import MoreLink from '@/components/MoreLink/MoreLink'
+import Placeholder from '@/components/Placeholder/Placeholder'
 import styles from './FeatureCard.module.css'
 
 type FeatureCardProps = {

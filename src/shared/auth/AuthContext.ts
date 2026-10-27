@@ -1,5 +1,12 @@
 import { createContext, useContext } from 'react'
-import type { User } from '@/shared/types'
+
+export type User = {
+  id: string
+  name: string
+  email: string
+  password: string
+  role: string
+}
 
 type AuthContextValue = {
   user: User | null

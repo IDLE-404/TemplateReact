@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Arrows from '@/components/Arrows'
-import Badge from '@/components/Badge'
-import Title from '@/components/Title'
+import Arrows from '@/components/Arrows/Arrows'
+import Badge from '@/components/Badge/Badge'
+import Title from '@/components/Title/Title'
 import { useI18n } from '@/shared/i18n/I18nContext'
-import StepCard from '../StepCard'
+import StepCard from '../StepCard/StepCard'
 import styles from './Steps.module.css'
 
 const Steps = () => {

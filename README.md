@@ -31,11 +31,11 @@ src/
   app/
     App.tsx
     router.tsx          all routes
-    providers/          AuthProvider, I18nProvider, AppProviders
+    providers/          AuthProvider, I18nProvider
   components/           components used on several pages
   layouts/
     MainLayout/         layout with the header
-    authLayout/         layout for login and registration
+    AuthLayout/         layout for login and registration
   pages/
     home/
     login/
@@ -43,12 +43,9 @@ src/
     profile/
     admin/
   shared/
-    auth/               auth context and useAuth
+    auth/               auth context, useAuth and the User type
     i18n/               en.ts, ru.ts, useI18n
     hooks/              useReveal
-    types/              shared types
-    api/
-    utils/
   styles/
     global.css
     variables.css       colors, radius, fonts
@@ -67,7 +64,6 @@ pages/home/
     Hero/
       Hero.tsx
       Hero.module.css
-      index.ts
     About/
     ...
 ```

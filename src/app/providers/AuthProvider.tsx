@@ -1,6 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react'
-import { AuthContext, defaultRoles } from '@/shared/auth/AuthContext'
-import type { User } from '@/shared/types'
+import { AuthContext, defaultRoles, type User } from '@/shared/auth/AuthContext'
 
 const defaultUsers: User[] = [
   { id: '1', name: 'Admin', email: 'admin@mail.com', password: 'admin', role: 'admin' },

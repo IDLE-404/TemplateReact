@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout/MainLayout";
-import AuthLayout from "@/layouts/authLayout";
-import RequireRole from "@/components/RequireRole";
+import AuthLayout from "@/layouts/AuthLayout/AuthLayout";
+import RequireRole from "@/components/RequireRole/RequireRole";
 import HomePage from "@/pages/home/HomePage";
 import LoginPage from "@/pages/login/LoginPage";
 import ProfilePage from "@/pages/profile/ProfilePage";

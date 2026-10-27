@@ -31,11 +31,11 @@ src/
   app/
     App.tsx
     router.tsx          все маршруты
-    providers/          AuthProvider, I18nProvider, AppProviders
+    providers/          AuthProvider, I18nProvider
   components/           компоненты, которые нужны на нескольких страницах
   layouts/
     MainLayout/         лейаут с шапкой
-    authLayout/         лейаут для входа и регистрации
+    AuthLayout/         лейаут для входа и регистрации
   pages/
     home/
     login/
@@ -43,12 +43,9 @@ src/
     profile/
     admin/
   shared/
-    auth/               контекст авторизации и useAuth
+    auth/               контекст авторизации, useAuth и тип User
     i18n/               en.ts, ru.ts, useI18n
     hooks/              useReveal
-    types/              общие типы
-    api/
-    utils/
   styles/
     global.css
     variables.css       цвета, скругления, шрифты
@@ -67,7 +64,6 @@ pages/home/
     Hero/
       Hero.tsx
       Hero.module.css
-      index.ts
     About/
     ...
 ```

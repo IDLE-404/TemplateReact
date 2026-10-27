@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { useI18n } from '@/shared/i18n/I18nContext'
-import Footer from '../Footer'
+import Footer from '../Footer/Footer'
 import styles from './Cta.module.css'
 
 const Cta = () => {

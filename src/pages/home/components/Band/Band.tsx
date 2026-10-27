@@ -1,4 +1,4 @@
-import Placeholder from '@/components/Placeholder'
+import Placeholder from '@/components/Placeholder/Placeholder'
 import styles from './Band.module.css'
 
 const Band = () => {

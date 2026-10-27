@@ -1,5 +1,5 @@
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import LangSwitch from '@/components/LangSwitch'
+import LangSwitch from '@/components/LangSwitch/LangSwitch'
 import { useI18n } from '@/shared/i18n/I18nContext'
 import styles from './AuthLayout.module.css'
 

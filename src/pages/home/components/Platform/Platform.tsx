@@ -1,8 +1,8 @@
 import { FiEye, FiGrid, FiMaximize2 } from 'react-icons/fi'
-import Badge from '@/components/Badge'
-import MoreLink from '@/components/MoreLink'
-import Placeholder from '@/components/Placeholder'
-import Title from '@/components/Title'
+import Badge from '@/components/Badge/Badge'
+import MoreLink from '@/components/MoreLink/MoreLink'
+import Placeholder from '@/components/Placeholder/Placeholder'
+import Title from '@/components/Title/Title'
 import { useI18n } from '@/shared/i18n/I18nContext'
 import styles from './Platform.module.css'
 
